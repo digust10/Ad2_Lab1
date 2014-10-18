@@ -1,0 +1,10 @@
+---
+title: "Q4"
+author: "Diego Ernesto"
+date: "Wednesday, October 15, 2014"
+output: html_document
+---
+
+**4 - A distribuição que você encontrou é a que você esperava sem olhar os dados? Se não é, você tem alguma suspeita da razão para a diferença? **
+
+Sim, eu esperava encontrar dados salariais com essa distribuiçao: mais concentrado entre os valores menores (entre 500 e 3500) e com poucos valores atipicos passando desses valores.

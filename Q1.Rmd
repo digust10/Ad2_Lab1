@@ -1,0 +1,24 @@
+---
+title: "Q1"
+author: "Diego Ernesto"
+date: "Saturday, October 18, 2014"
+output: html_document
+---
+
+**1. Assista esse vídeo com atenção. Perceba que a grande pergunta que Hans Rosling tenta responder é: temos dois mundos separados; o mundo ocidental norte rico e o resto do mundo pobre? Talvez você precise pausar o vídeo para entender, assistir mais de uma vez, etc.** 
+
+**a. Trace um esboço do caminho que ele percorreu analisando os dados para responder essas perguntas.** 
+
+Primeiro ele percebeu que os alunos apenas se baseavam em ideias pre-concebidas sobre que existe o mundo ocidental rico e todo o resto é pobre. Ele conseguiu esses dados atraves de um survey com os alunos.
+
+Como forma de provas que o mundo nao pode ser dividido em apenas dois grupos, ele organizou dados em forma de volume esferico (representado os paises e seus volumes populacionais) e posição (no eixo x para numero de filhos por familia e eixo y para longevidade). Depois disso, ele mostrou a evolução dos paises ao longo dos anos. 
+
+Mostrando que paises mudam, evoluem e, principalmente, que a posição de cada um deve ser vista de forma extremamente contextualizada e baseada em dados, e nao atraves de dados desatualizados e visões não fundamentadas.
+
+Depois ele usa um grafico para mostra a destribuição de renda na população. E depois mostra a posição de cada região e a sua destribuição individual, mostrando que existem grupos que estão em sua maioria na porcentagem de mais pobre ou na de mais rica, ou ate outros que passam por todas as porcentagens. Mas, acima de tudo, mostrando que mesmo um grupo considerado similares internamente (como os paises da Africa) podem conter variados sub-grupos e variadas situações internas.
+
+Para comprovar isso ele mostra outro grafico (similar ao primeiro), que associa a renda per capta X mortalidade infantil. Que tambem comprova a individualidade e mobilidade ao longo dos anos (contextos, fatos historicos e economicos) de cada pais/sub-grupo interno de um pais.
+
+**b. Anote os termos ou ideias que você não entende ainda.**
+
+Os dados sao exibidos muito claramente, logo fica facil entender pelo contexto o que a informação que ele quer passar. Mas conceitos como "qual o motivo de não usar medias não ser uma boa estrategia de medição" ainda não faz sentido pra mim.

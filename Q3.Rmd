@@ -1,0 +1,29 @@
+---
+title: "Q3"
+author: "Diego Ernesto"
+date: "Wednesday, October 15, 2014"
+output: html_document
+---
+
+**3 - Os salários estão bem distribuídos no intervalo que vai do menor salário para o maior salário? Ou será que os salários são muito concentrados em um intervalo pequeno de valores? Será que existem salários atípicos (outliers)?**
+
+Dado o enunciado, vamos olhar o histograma para ver a distribuiçao salarial:
+```{r include=FALSE}
+dados = read.csv("salario.csv")
+```
+
+```{r}
+salario = dados$Salario.Bruto
+hist(salario)
+```
+
+Dada a imagem, é facil ver uma concentração maior de salarios concentrados nas primeiras categorias do histograma. Mostrando uma distribuiçao bem assimetrica. Sendo assim devemos confiar no valor da mediana.
+Agora observando o Boxplot:
+
+```{r}
+boxplot(salario)
+summary(salario)
+```
+
+Vemos que, desconsiderando os outliers, a mediana esta relativamente dividindo bem os valores do boxplot. Sendo assim podemos afirmar que, dentre a maior concentraçao de dados, os salarios estão bem distribuidos na pequena faixa que compreende de 500 reais a 5332. E, pelo Sumario, vemos que a mediana de salario é de 3583 reais.
+Por fim existem 4 salarios considerados atipicos, como mostram os outliers na figura.

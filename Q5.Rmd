@@ -1,0 +1,34 @@
+---
+title: "Q5"
+author: "Diego Ernesto"
+date: "Wednesday, October 15, 2014"
+output: html_document
+---
+
+** 5 -  É interessante ver a média (mean) salarial para cada região. Como resultado, apresente uma tabela com o nome da região e a sua média salarial ordenada da região com a maior média salarial para a menor. Se você tivesse usado a mediana (median) em vez da média como métrica de interesse, o resultado seria o mesmo? Analise a situação e justifique. Aproveite e salve esta tabela em um arquivo do tipo csv.**
+
+```{r include=FALSE}
+dados = read.csv("salario.csv")
+```
+
+Dado o enunciado vamos agrupar os trabalhadores por região e dar sua media salarial (alem de ordena-los):
+```{r}
+salarioMedia  = aggregate(Salario.Bruto ~ Regiao, data = dados, FUN = mean)
+salarioMedia  = salarioMedia[ order(-salarioMedia[,2]), ]
+salarioMedia
+```
+
+Agora vamos fazer o mesmo, sendo que para a mediana:
+```{r}
+salarioMediana = aggregate(Salario.Bruto ~ Regiao, data = dados, FUN = median)
+salarioMediana = salarioMediana[ order(-salarioMediana[,2]), ]
+salarioMediana
+```
+Percebe-se que os dados não são os mesmos, o que ja era esperado. Como comentado na questão 3, é facil ver uma distribuiçao bem assimetrica. Sendo assim devemos confiar no valor da mediana.
+Abaixo, salvamos os resultados cada um em um csv.
+
+```{r}
+write.csv(salarioMedia, "salarioMedia.csv")
+write.csv(salarioMediana, "salarioMediana.csv")
+```
+

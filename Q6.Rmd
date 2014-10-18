@@ -1,0 +1,32 @@
+---
+title: "Q6"
+author: "Diego Ernesto"
+date: "Saturday, October 18, 2014"
+output: html_document
+---
+
+**6 - Se um profissional de TI deseja ter um salario melhor, qual a(s) dica(s) para ele?**
+
+Tendo em vista os resultados das questões 2 e 5, podemos afirmar que, de acordo com csv, a região centro-oeste oferece de cara o maior numero de profissionais e maior media-mediana salarial (5000 reais). Vamos partir deste ponto,
+Vamos agora analizar a mediana salarial dividida pelos estados do centro-oeste:
+
+```{r include = FALSE}
+dados = read.csv("salario.csv")
+```
+
+```{r}
+profissionaisSudeste =subset(dados,Regiao == "Sudeste")
+salarioMediana = aggregate(Salario.Bruto ~ UF, data = profissionaisSudeste, FUN = median)
+salarioMediana = salarioMediana[ order(-salarioMediana[,2]), ]
+salarioMediana
+```
+Diferente do numero de profissionais (que chegamos a conclusão anteriormente que a maior concentraçao era em MG), a maior media salarial se encontra no estado RJ.
+Vamos agora pesquisar qual a cidade com maior media salarial.
+
+```{r}
+profissionaisRJ =subset(dados,UF == "RJ")
+salarioMediana = aggregate(Salario.Bruto ~ Cidade, data = profissionaisRJ, FUN = median)
+salarioMediana = salarioMediana[ order(-salarioMediana[,2]), ]
+salarioMediana
+```
+Temos como resultado a capital do Rio como a melhor media salarial do estado do RJ. Sendo assim o melhor lugar para se trabalhar em termos salariais.

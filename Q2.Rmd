@@ -1,0 +1,67 @@
+---
+title: "Q2"
+author: "Diego Ernesto"
+date: "Tuesday, October 14, 2014"
+output: html_document
+---
+
+**2 - Qual o panorama geral dos profissionais de TI no Brasil sem ainda se preocupar com seus salários, apenas com sua localização, função, expertise...? **
+
+Dado o enunciado, podemos começar a manipular os dados para chegar a que regiao tem a maior demanda de funcionarios de TI segundo o CSV:
+
+```{r include=FALSE}
+library(plyr)
+dados = read.csv("salario.csv")
+```
+
+
+```{r}
+count(dados, "Regiao")
+```
+Podemos ver que a região com o maior numero de profissionais encontra-se na regiao Sudeste (92 funcionarios), o que representa 56% do total. Seguido da região Nordeste (34 funcionarios).
+
+Dado esse resultado vamos analizar qual o estado com maior numero de profissionais na Região Sudeste
+
+```{r}
+profissionaisSudeste =subset(dados,Regiao == "Sudeste")
+count(profissionaisSudeste, "UF")
+```
+
+Sendo assim possivel ver que o estado com maior numero de profissionais é Minas Gerais (47 Profissionais), seguido por Sao Paulo (25 profissionais).
+
+Dado o resultado, vamos analizar qual seria a cidade com maior numero de profissionais na area:
+
+```{r}
+profissionaisMG =subset(dados,UF == "MG")
+count(profissionaisMG, "Cidade")
+```
+
+Concluindo que Belo Horizonte é a cidade com mais funcionarios de TI segundo o CSV.
+
+Partindo para outros campos do CSV, temos:
+
+```{r}
+count(dados, "Horas.Diarias")
+```
+
+É facil perceber que a carga horaria comumo para esses proficionais é 8 horas diarias.
+Agora vamos observar o tempo de empresa que os profissionais tem dividido em categorias:
+
+```{r}
+count(dados, "Tempo.de.Empresa")
+```
+
+E podemos ver que a maioria dos profissionais esta a 1 ano na empresa (que são 34 profissionais). Ja falando de experiencia profissional:
+
+```{r}
+count(dados, "Experiencia.Profissional")
+```
+
+logo, podemos ver que a experiencia profissional da maioria é de 4 anos (15 profissionais). O que indica que a maior parte dos profissionais não costumam ficar toda a carrira na mesma empresa, como podemos atestar abaixo:
+
+```{r}
+k = (subset(dados,Tempo.de.Empresa == Experiencia.Profissional))
+nrow(k)
+```
+
+Como podemos verificar dos 162 profissionais listados, apenas 29 tem o mesmo periodo de experiencia, ou seja, apenas 17% permanesceram toda a carreira na mesma empresa.
